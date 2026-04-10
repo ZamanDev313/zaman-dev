@@ -18,9 +18,9 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const serviceID = "YOUR_SERVICE_ID";    // replace with your service ID
-    const templateID = "contact_form";      // your template ID
-    const publicKey = "YOUR_PUBLIC_KEY";    // your public key
+    const serviceID = "service_ne7pfkd";    // replace with your service ID
+    const templateID = "template_p4ln2e3";      // your template ID
+    const publicKey = "TawHoDav3a_s8GgFG";    // your public key
 
     emailjs.send(serviceID, templateID, formData, publicKey)
       .then(

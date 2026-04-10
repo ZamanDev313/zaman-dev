@@ -1,156 +1,107 @@
+import React from "react";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaPhp, FaDatabase, FaGitAlt, FaFileExcel, FaFilePowerpoint } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { useState } from "react";
-import { 
-  FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaCircle, FaNodeJs, FaPython, FaGit, FaGithub 
-} from "react-icons/fa";
-import { SiMysql, SiMongodb } from "react-icons/si";
-import { FaPlus } from "react-icons/fa";
 
 export default function Skills() {
-  const defaultSkills = [
-    { id: 1, name: "HTML5", link: "https://www.w3schools.com/html/", icon: <FaHtml5 /> },
-    { id: 2, name: "CSS3", link: "https://www.w3schools.com/css/", icon: <FaCss3Alt /> },
-    { id: 3, name: "JavaScript", link: "https://www.w3schools.com/js/", icon: <FaJs /> },
-    { id: 4, name: "ReactJS", link: "https://www.w3schools.com/react/", icon: <FaReact /> },
-    { id: 5, name: "Bootstrap", link: "https://www.w3schools.com/bootstrap5/", icon: <FaBootstrap /> },
+  const skillCategories = [
+    {
+      title: "Frontend Development",
+      skills: [
+        { name: "HTML5", icon: <FaHtml5 />, level: "90%", color: "#e34c26" },
+        { name: "CSS3", icon: <FaCss3Alt />, level: "85%", color: "#264de4" },
+        { name: "JavaScript", icon: <FaJs />, level: "80%", color: "#f7df1e" },
+        { name: "ReactJS", icon: <FaReact />, level: "75%", color: "#61dbfb" },
+        { name: "Bootstrap", icon: <FaBootstrap />, level: "85%", color: "#7952b3" },
+      ],
+    },
+    {
+      title: "Backend & Database",
+      skills: [
+        { name: "PHP", icon: <FaPhp />, level: "70%", color: "#777bb4" },
+        { name: "MySQL", icon: <FaDatabase />, level: "75%", color: "#00758f" },
+      ],
+    },
+    {
+      title: "Tools & Others",
+      skills: [
+        { name: "Git", icon: <FaGitAlt />, level: "70%", color: "#f05032" },
+     
+        { name: "MS Excel", icon: <FaFileExcel />, level: "80%", color: "#1d6f42" },
+        { name: "PowerPoint", icon: <FaFilePowerpoint />, level: "85%", color: "#d24726" },
+      ],
+    },
   ];
 
-  const [skills, setSkills] = useState(() => {
-    const saved = localStorage.getItem("skills");
-    return saved ? JSON.parse(saved) : defaultSkills;
-  });
-
-  const [showModal, setShowModal] = useState(false);
-  const [skillInput, setSkillInput] = useState("");
-  const [urlInput, setUrlInput] = useState("");
-  const [selectedIcon, setSelectedIcon] = useState("FaCircle");
-
-  const iconOptions = {
-    FaHtml5: <FaHtml5 />,
-    FaCss3Alt: <FaCss3Alt />,
-    FaJs: <FaJs />,
-    FaReact: <FaReact />,
-    FaBootstrap: <FaBootstrap />,
-    FaNodeJs: <FaNodeJs />,
-    FaPython: <FaPython />,
-    FaGit: <FaGit />,
-    FaGithub: <FaGithub />,
-    SiMysql: <SiMysql />,
-    SiMongodb: <SiMongodb />,
-    FaCircle: <FaCircle />,
-  };
-
-  const w3Links = {
-    html5: "https://www.w3schools.com/html/",
-    css3: "https://www.w3schools.com/css/",
-    javascript: "https://www.w3schools.com/js/",
-    reactjs: "https://www.w3schools.com/react/",
-    bootstrap: "https://www.w3schools.com/bootstrap5/",
-    nodejs: "https://www.w3schools.com/nodejs/",
-    python: "https://www.w3schools.com/python/",
-    git: "https://www.w3schools.com/git/",
-    github: "https://www.w3schools.com/github/",
-    mysql: "https://www.w3schools.com/sql/",
-    mongodb: "https://www.w3schools.com/mongodb/",
-  };
-
-  const addSkill = () => {
-    const name = skillInput.trim();
-    if (!name) return;
-
-    const exists = skills.some(s => s.name.toLowerCase() === name.toLowerCase());
-    if (exists) { alert("This skill already exists."); return; }
-
-    const link = urlInput || w3Links[name.toLowerCase()] || `https://www.w3schools.com/search/?q=${name}`;
-    const icon = iconOptions[selectedIcon] || <FaCircle />;
-
-    const newSkills = [...skills, { id: Date.now(), name, link, icon }];
-    setSkills(newSkills);
-    localStorage.setItem("skills", JSON.stringify(newSkills));
-
-    setSkillInput(""); setUrlInput(""); setSelectedIcon("FaCircle"); setShowModal(false);
-  };
-
-  const openSkill = (link) => window.open(link, "_blank", "noopener,noreferrer");
-  const removeSkill = (id) => {
-    const newSkills = skills.filter(s => s.id !== id);
-    setSkills(newSkills);
-    localStorage.setItem("skills", JSON.stringify(newSkills));
-  };
-
   return (
-    <div className="container-fluid py-5" style={{ background: "#0a0f24", color: "#e6eef8" }}>
-      <div className="text-center mb-4">
-        <h1 className="text-primary fw-bold">MY SKILLS</h1>
-        <p className="text-light mx-auto" style={{ maxWidth: "700px" }}>
-          Technologies and tools I use to build modern, responsive websites.
-        </p>
-      </div>
+    <div className="container-fluid py-5" style={{ background: "#1a1f36", color: "#e6eef8", minHeight: "100vh" }}>
+      <div className="container">
+        <div className="text-center mb-5">
+          <h1 className="text-primary fw-bold display-4">MY SKILLS</h1>
+          <p className="text-light mx-auto fs-5" style={{ maxWidth: "700px" }}>
+            Technologies and tools I use to build modern, responsive, and functional web applications.
+          </p>
+        </div>
 
-      {/* Floating Add Button */}
-      <button
-        className="btn btn-primary rounded-circle position-fixed"
-        style={{ bottom: "40px", right: "40px", width: "60px", height: "60px", fontSize: "1.5rem", zIndex: 1000 }}
-        onClick={() => setShowModal(true)}
-      >
-        <FaPlus />
-      </button>
-
-      {/* Skills Display */}
-      <div className="row justify-content-center">
-        {skills.map(skill => (
-          <div key={skill.id} className="col-md-2 col-6 mb-4 text-center hoverable p-3 rounded border border-primary"
-               style={{ background: "rgba(93,99,241,0.05)", transition: "0.3s", fontSize: "2rem", cursor: "pointer" }}>
-            <div onClick={() => openSkill(skill.link)}>{skill.icon}</div>
-            <p className="text-light">{skill.name}</p>
-            <button className="btn btn-sm btn-danger mt-2" onClick={() => removeSkill(skill.id)}>Remove</button>
-          </div>
-        ))}
-      </div>
-
-      {/* Modal */}
-      {showModal && (
-        <div className="modal-backdrop">
-          <div className="modal-content p-4 rounded" style={{ maxWidth: "450px", margin: "100px auto", background: "#131738" }}>
-            <h5 className="text-light mb-3">Add New Skill</h5>
-            <input type="text" className="form-control mb-2" placeholder="Skill Name" value={skillInput} onChange={e => setSkillInput(e.target.value)} />
-            <input type="text" className="form-control mb-2" placeholder="Skill URL (optional)" value={urlInput} onChange={e => setUrlInput(e.target.value)} />
-            
-            {/* Icon Selection */}
-            <div className="d-flex flex-wrap gap-2 mb-3">
-              {Object.keys(iconOptions).map(key => (
-                <div key={key} onClick={() => setSelectedIcon(key)}
-                     className={`p-2 rounded text-light hoverable ${selectedIcon===key ? "border border-primary" : ""}`}
-                     style={{ cursor: "pointer", fontSize: "1.5rem" }}>
-                  {iconOptions[key]}
+        <div className="row g-5">
+          {skillCategories.map((category, idx) => (
+            <div key={idx} className="col-lg-4">
+              <div className="category-card p-4 rounded-4 h-100 shadow-lg" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)" }}>
+                <h3 className="text-white fw-bold mb-4 border-bottom border-primary pb-2">{category.title}</h3>
+                <div className="skills-list">
+                  {category.skills.map((skill, sIdx) => (
+                    <div key={sIdx} className="skill-item mb-4">
+                      <div className="d-flex align-items-center justify-content-between mb-2">
+                        <div className="d-flex align-items-center gap-2">
+                          <span className="fs-4" style={{ color: skill.color }}>{skill.icon}</span>
+                          <span className="text-white fw-bold">{skill.name}</span>
+                        </div>
+                        <span className="text-secondary small">{skill.level}</span>
+                      </div>
+                      <div className="progress bg-dark" style={{ height: "8px", borderRadius: "10px" }}>
+                        <div 
+                          className="progress-bar progress-bar-striped progress-bar-animated" 
+                          role="progressbar" 
+                          style={{ width: skill.level, backgroundColor: skill.color, borderRadius: "10px" }}
+                          aria-valuenow={parseInt(skill.level)} 
+                          aria-valuemin="0" 
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
+          ))}
+        </div>
 
-            <div className="d-flex justify-content-between">
-              <button className="btn btn-secondary" onClick={() => setShowModal(false)}>Cancel</button>
-              <button className="btn btn-primary" onClick={addSkill}>Add</button>
-            </div>
+        {/* Learning Section */}
+        <div className="mt-5 pt-5 text-center">
+          <div className="p-4 rounded-4 d-inline-block shadow-lg" style={{ background: "rgba(13, 110, 253, 0.1)", border: "1px solid #0d6efd" }}>
+            <h4 className="text-white fw-bold mb-2">Currently Learning & Improving</h4>
+            <p className="text-light mb-0 opacity-75">Node.js, Express, and Advanced React Patterns</p>
           </div>
         </div>
-      )}
+      </div>
 
       <style>{`
-        .hoverable:hover {
-          transform: scale(1.05);
-          background: rgba(93,99,241,0.15);
-          transition: 0.3s;
+        .category-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .modal-backdrop {
-          position: fixed;
-          top:0; left:0;
-          width:100%; height:100%;
-          background: rgba(0,0,0,0.7);
-          display:flex;
-          justify-content:center;
-          align-items:center;
-          z-index: 999;
+        .category-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+          border-color: #0d6efd !important;
+        }
+        .skill-item {
+          transition: transform 0.2s ease;
+        }
+        .skill-item:hover {
+          transform: scale(1.02);
+        }
+        .progress-bar {
+          transition: width 1.5s ease-in-out;
         }
       `}</style>
     </div>
