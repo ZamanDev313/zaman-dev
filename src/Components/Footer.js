@@ -47,7 +47,7 @@ export default function Footer() {
         .footer {
           background: linear-gradient(135deg, #0a0f24, #1a1f36);
           padding: 60px 20px;
-          margin-top: 80px;
+          border-top:0.5px solid #576b8f;
           position: relative;
           overflow: hidden;
         }

@@ -17,12 +17,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg modern-navbar fixed-top">
+      <nav className="navbar navbar-expand-lg modern-navbar ">
         <div className="container">
 
           {/* BRAND */}
           <Link className="navbar-brand brand" to="/">
-            <span>Zaman</span>Rehmani
+            <span>M-</span>ZAMAN
           </Link>
 
           {/* TOGGLER */}
@@ -134,7 +134,7 @@ export default function Navbar() {
         }
 
         .hire-btn:hover {
-          transform: translateY(-3px);
+          transform: translateY(-2px);
           box-shadow: 0 10px 20px rgba(0, 234, 255, 0.3);
         }
 
@@ -149,6 +149,7 @@ export default function Navbar() {
 
           .nav-link {
             margin-bottom: 10px;
+            padding-left:1rem;
           }
 
           .hire-btn {

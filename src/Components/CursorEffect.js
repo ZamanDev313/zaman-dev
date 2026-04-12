@@ -107,17 +107,17 @@ export default function CursorEffect() {
         z-index: 9999;
       }
 
-      .cursor-follower {
-        position: fixed;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        z-index: 9998;
-        background: radial-gradient(circle, rgba(0,234,255,0.3), transparent);
-        transition: 0.2s;
-      }
+      // .cursor-follower {
+      //   position: fixed;
+      //   width: 40px;
+      //   height: 40px;
+      //   border-radius: 50%;
+      //   pointer-events: none;
+      //   transform: translate(-50%, -50%);
+      //   z-index: 9998;
+      //   background: radial-gradient(circle, rgba(0,234,255,0.3), transparent);
+      //   transition: 0.1s;
+      // }
 
       .cursor-hover {
         transform: translate(-50%, -50%) scale(1.8);

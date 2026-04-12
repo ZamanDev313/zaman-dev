@@ -98,14 +98,14 @@ export default function Projects() {
       </div>
 
       {/* Floating Add Button */}
-      <button
+      {/* <button
         className="btn btn-primary rounded-circle position-fixed shadow-lg"
         style={{ bottom: "40px", right: "40px", width: "60px", height: "60px", fontSize: "1.5rem", zIndex: 1000 }}
         onClick={() => setShowModal(true)}
         title="Add New Project"
       >
         <FaPlus />
-      </button>
+      </button> */}
 
       {/* Projects Grid */}
       <div className="container">
@@ -150,8 +150,8 @@ export default function Projects() {
       {/* Project Detail Modal */}
       {selectedProject && (
         <div className="modal-backdrop" onClick={() => setSelectedProject(null)}>
-          <div className="modal-content p-0 rounded-4 border-0 shadow-2xl overflow-hidden" 
-               style={{ maxWidth: "800px", width: "90%", background: "#131738" }}
+          <div className="modal-content  p-0 rounded-4 border-0 shadow-2xl overflow-hidden " 
+               style={{ maxWidth: "800px", width: "80%", background: "#131738" }}
                onClick={e => e.stopPropagation()}>
             <div className="position-relative">
               <img src={selectedProject.img} alt={selectedProject.title} className="w-100" style={{ maxHeight: "350px", objectFit: "cover" }} />
