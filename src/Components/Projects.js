@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { useState } from "react";
-import { FaPlus, FaTimes, FaLaptopCode, FaMobileAlt, FaDatabase, FaGlobe, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaTimes, FaLaptopCode, FaMobileAlt, FaDatabase, FaGlobe, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 export default function Projects() {
   const defaultProjects = [
