@@ -38,17 +38,17 @@ export default function Home() {
             <h2 className="h1 fw-bold mb-4 opacity-90">
               A Passionate{" "}
               <span className="text-primary border-bottom border-primary border-3">
-                Frontend Developer
+                Junior Frontend Developer
               </span>
             </h2>
             <p
               className="fs-5 text-secondary mb-5 mx-auto mx-lg-0"
               style={{ maxWidth: "600px", lineHeight: "1.8" }}
             >
-              I specialize in building modern, responsive, and user-centric web
-              applications using React, JavaScript, and Bootstrap. Currently a
-              final-year BSCS student, I'm on a mission to bridge the gap
-              between design and functionality.
+              I build responsive, user-friendly websites by turning Figma
+              designs into clean, functional interfaces using HTML, CSS,
+              JavaScript, and React. I also have hands-on experience with
+              WordPress, Shopify, and website QA.
             </p>
 
             <div className="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-5">
@@ -68,6 +68,7 @@ export default function Home() {
               </a>
             </div>
 
+            <p>Open to Junior Frontend Developer opportunities.</p>
             {/* Social Links */}
             <div className="d-flex gap-4 justify-content-center justify-content-lg-start fs-3">
               <a
