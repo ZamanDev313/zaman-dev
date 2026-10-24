@@ -1,85 +1,167 @@
-# MrZaman Portfolio 🚀
 
-## Tech Stack
-- React
-- Vite
-- CSS
+# ZamanDev — Developer Portfolio 🚀
 
-## Features
-- Responsive Design
-- Projects Showcase
-- Clean UI
+A personal developer portfolio built with React to showcase projects, technical skills, education, certifications, and professional experience. It also includes an admin dashboard for managing portfolio content.
 
-## Live Demo
-Coming Soon
+## 🌐 Live Demo
 
-# Getting Started with Create React App
+- **Portfolio:** [View Live Portfolio](https://zaman-react-portfolio.vercel.app/)
+- **GitHub Repository:** [ZamanDev/zaman-dev](https://github.com/ZamanDev313/zaman-dev)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ✨ Features
 
-## Available Scripts
+- Responsive portfolio design
+- Projects showcase
+- Education and certifications sections
+- Admin dashboard for portfolio management
+- Supabase integration
+- PostgreSQL database through Supabase
+- Certificate image uploads using Supabase Storage
+- Authentication and access control
+- Reusable React components
+- Environment-based configuration
+- Vercel deployment
 
-In the project directory, you can run:
+## 🛠️ Tech Stack
 
-### `npm start`
+| Technology | Purpose |
+|---|---|
+| React | Frontend development |
+| JavaScript | Application logic |
+| HTML5 | Page structure |
+| CSS3 | Styling and responsive design |
+| React Router | Client-side routing |
+| Supabase | Backend services and authentication |
+| PostgreSQL | Database |
+| Supabase Storage | Certificate image storage |
+| Git & GitHub | Version control |
+| Vercel | Deployment |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📁 Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```text
+zaman-dev/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── styles/
+│   ├── supabaseClient.js
+│   ├── App.js
+│   └── index.js
+├── .gitignore
+├── package.json
+└── README.md
+```
 
-### `npm test`
+*Note: This is a high-level overview. The final folder structure should match the actual project files.*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Make sure you have installed:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Node.js](https://nodejs.org/)
+- npm
+- [Git](https://git-scm.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Clone the repository
 
-### `npm run eject`
+```bash
+git clone https://github.com/ZamanDev313/zaman-dev.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Navigate to the project directory
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+cd zaman-dev
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. Install dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+### 4. Configure environment variables
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a `.env` file in the project root directory:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```env
+REACT_APP_SUPABASE_URL=your_supabase_project_url
+REACT_APP_SUPABASE_ANON_KEY=your_supabase_publishable_or_anon_key
+```
 
-### Code Splitting
+Replace the example values with your actual Supabase project credentials.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Security notes:**
+- Never commit your `.env` file to GitHub.
+- Never expose your Supabase service-role key or secret key in frontend code.
+- Configure appropriate Row Level Security (RLS) policies for database access.
 
-### Analyzing the Bundle Size
+### 5. Run the development server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm start
+```
 
-### Making a Progressive Web App
+Open the local URL displayed in your terminal, usually:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+http://localhost:3000
 
-### Advanced Configuration
+## 🏗️ Production Build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To create an optimized production build, run:
 
-### Deployment
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The generated files will be available in the `build/` directory.
 
-### `npm run build` fails to minify
+## 🔐 Admin Dashboard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The admin dashboard is designed to make portfolio content management easier without manually editing source code for every update.
+
+Depending on the implemented features, it can support managing projects, education, certifications, and related portfolio content.
+
+Admin access and data changes should be protected through authentication and appropriate Supabase security policies.
+
+## ☁️ Deployment
+
+This project is hosted on Vercel.
+
+To deploy your own version:
+
+1. Import the GitHub repository into Vercel.
+2. Configure the required Supabase environment variables in Vercel project settings.
+3. Deploy the project.
+4. Verify the portfolio pages and admin dashboard.
+
+## 📚 Documentation
+
+Detailed project documentation will be added as the documentation phase progresses.
+
+Planned guides include:
+
+- Project overview
+- Application architecture
+- Folder structure
+- Admin dashboard guide
+- Supabase setup
+- Security and access policies
+- Deployment guide
+
+## 👨‍💻 Author
+
+**Muhammad Zaman Rehmani**
+
+- **GitHub:** [ZamanDev313](https://github.com/ZamanDev313)
+- **LinkedIn:** [Muhammad Zaman](https://www.linkedin.com/in/muhammadzaman-dev/)
+- **Portfolio:** [zaman-react-portfolio.vercel.app](https://zaman-react-portfolio.vercel.app/)
+
+---
+
+Built with React and a focus on clean, maintainable frontend development.
