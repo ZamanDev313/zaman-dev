@@ -1,0 +1,946 @@
+
+/* =========================================
+   ADMIN EXPERIENCE
+   Dark Navy + Purple Theme
+   ========================================= */
+
+.admin-experience {
+    --ae-bg: #12131e;
+    --ae-bg-input: #171824;
+    --ae-bg-soft: #1a1b29;
+    --ae-border: #292a3b;
+    --ae-border-input: #303144;
+    --ae-purple: #8b5cf6;
+    --ae-purple-light: #c5adff;
+    --ae-text: #f5f5fa;
+    --ae-text-secondary: #a2a3b8;
+    --ae-text-muted: #77788e;
+    --ae-danger: #f0a2b0;
+
+    width: 100%;
+    min-width: 0;
+    color: var(--ae-text);
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.admin-experience *,
+.admin-experience *::before,
+.admin-experience *::after {
+    box-sizing: border-box;
+}
+
+.admin-experience button,
+.admin-experience input,
+.admin-experience select,
+.admin-experience textarea {
+    font: inherit;
+}
+
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+
+.admin-experience-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.admin-experience-header h1 {
+    margin: 0 0 8px;
+    color: var(--ae-text);
+    font-size: 25px;
+    font-weight: 750;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.admin-experience-header p {
+    margin: 0;
+    color: var(--ae-text-secondary);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   SUCCESS / ERROR NOTIFICATIONS
+   ========================================= */
+
+.admin-experience-notice {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border: 1px solid var(--ae-border);
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.admin-experience-notice.success {
+    border-color: #245b47;
+    background: #14271f;
+    color: #8ee0b9;
+}
+
+.admin-experience-notice.error {
+    border-color: #693442;
+    background: #2a1921;
+    color: #ffadb9;
+}
+
+.admin-experience-notice > button {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+    font-size: 21px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.admin-experience-notice > button:hover {
+    border-color: currentColor;
+}
+
+/* =========================================
+   FORM SECTION
+   ========================================= */
+
+.admin-experience-form-section,
+.admin-experience-list-section {
+    min-width: 0;
+    margin-bottom: 24px;
+    padding: 24px;
+    border: 1px solid var(--ae-border);
+    border-radius: 13px;
+    background: var(--ae-bg);
+}
+
+.admin-experience-form-section > h2,
+.admin-experience-list-header h2 {
+    margin: 0;
+    color: var(--ae-text);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.admin-experience-form-section > h2 {
+    margin-bottom: 22px;
+}
+
+/* Main form layout */
+
+.admin-experience-form {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    min-width: 0;
+}
+
+.admin-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 16px;
+    min-width: 0;
+}
+
+/* Form labels */
+
+.admin-experience-form > label:not(.admin-experience-checkbox),
+.admin-experience-grid > label,
+.admin-responsibility-item > label,
+.admin-responsibility-icon-field > label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    color: #d7d7e4;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* Inputs, selects and textareas */
+
+.admin-experience-form input:not([type="checkbox"]),
+.admin-experience-form select,
+.admin-experience-form textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--ae-border-input);
+    border-radius: 8px;
+    outline: none;
+    background: var(--ae-bg-input);
+    color: var(--ae-text);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.7;
+    transition: border-color 180ms ease,
+                box-shadow 180ms ease;
+}
+
+.admin-experience-form input::placeholder,
+.admin-experience-form textarea::placeholder {
+    color: var(--ae-text-muted);
+    opacity: 1;
+}
+
+.admin-experience-form input:focus,
+.admin-experience-form select:focus,
+.admin-experience-form textarea:focus {
+    border-color: var(--ae-purple);
+    box-shadow: 0 0 0 3px rgb(139 92 246 / 12%);
+}
+
+.admin-experience-form select {
+    cursor: pointer;
+}
+
+.admin-experience-form select option {
+    background: var(--ae-bg-input);
+    color: var(--ae-text);
+}
+
+.admin-experience-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.admin-experience-form input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.admin-experience-form input[type="month"] {
+    color-scheme: dark;
+}
+
+.admin-experience-form input[type="number"] {
+    max-width: 180px;
+}
+
+.admin-experience-form small {
+    color: var(--ae-text-secondary);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+/* =========================================
+   CHECKBOXES
+   ========================================= */
+
+.admin-experience-form > .admin-experience-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    min-height: 22px;
+    margin: -3px 0;
+    color: #c9cad8;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.admin-experience-checkbox input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--ae-purple);
+    cursor: pointer;
+}
+
+/* =========================================
+   REUSABLE BUTTONS
+   ========================================= */
+
+.admin-experience-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 38px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background 180ms ease,
+                border-color 180ms ease,
+                color 180ms ease,
+                transform 180ms ease;
+}
+
+.admin-experience-button svg {
+    flex-shrink: 0;
+    font-size: 13px;
+}
+
+.admin-experience-button.primary {
+    border-color: var(--ae-purple);
+    background: var(--ae-purple);
+    color: #ffffff;
+}
+
+.admin-experience-button.primary:hover:not(:disabled) {
+    border-color: #7544df;
+    background: #7544df;
+    transform: translateY(-1px);
+}
+
+.admin-experience-button.secondary {
+    border-color: #3a3055;
+    background: #27203a;
+    color: var(--ae-purple-light);
+}
+
+.admin-experience-button.secondary:hover:not(:disabled) {
+    border-color: var(--ae-purple);
+    background: #32244f;
+}
+
+.admin-experience-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================================
+   RESPONSIBILITIES SECTION
+   ========================================= */
+
+.admin-responsibilities {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+    padding: 19px;
+    border: 1px solid var(--ae-border);
+    border-radius: 11px;
+    background: #0f101a;
+}
+
+.admin-responsibilities-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 3px;
+}
+
+.admin-responsibilities-header > div {
+    min-width: 0;
+}
+
+.admin-responsibilities-header h3 {
+    margin: 0 0 6px;
+    color: var(--ae-text);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.admin-responsibilities-header p {
+    margin: 0;
+    color: var(--ae-text-secondary);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.admin-responsibilities-empty {
+    margin: 0;
+    padding: 22px 14px;
+    border: 1px dashed #38364d;
+    border-radius: 8px;
+    color: var(--ae-text-secondary);
+    font-size: 12px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Individual responsibility card */
+
+.admin-responsibility-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 0;
+    padding: 17px;
+    border: 1px solid #303144;
+    border-radius: 10px;
+    background: #151621;
+    transition: border-color 180ms ease;
+}
+
+.admin-responsibility-item:hover {
+    border-color: #51416f;
+}
+
+.admin-responsibility-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--ae-border);
+}
+
+.admin-responsibility-top > strong {
+    color: var(--ae-purple-light);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Move up, move down and delete controls */
+
+.admin-responsibility-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.admin-responsibility-actions button {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 1px solid var(--ae-border-input);
+    border-radius: 7px;
+    background: #1a1b29;
+    color: #bfc0d1;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 180ms ease;
+}
+
+.admin-responsibility-actions button:hover:not(:disabled) {
+    border-color: var(--ae-purple);
+    background: #28213f;
+    color: var(--ae-purple-light);
+}
+
+.admin-responsibility-actions button.delete {
+    border-color: #49303a;
+    color: var(--ae-danger);
+}
+
+.admin-responsibility-actions button.delete:hover {
+    border-color: #b94b64;
+    background: #3b202d;
+    color: #ffb4c0;
+}
+
+.admin-responsibility-actions button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Responsibility icon selector */
+
+.admin-responsibility-icon-field {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(120px, 0.55fr);
+    align-items: end;
+    gap: 13px;
+    min-width: 0;
+}
+
+.admin-responsibility-icon-field > label {
+    min-width: 0;
+}
+
+.admin-responsibility-icon-field select {
+    width: 100%;
+}
+
+/* Live icon preview */
+
+.admin-responsibility-icon-preview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid #3a3055;
+    border-radius: 8px;
+    background: #27203a;
+    color: var(--ae-purple-light);
+}
+
+.admin-responsibility-icon-preview svg {
+    flex-shrink: 0;
+    font-size: 19px;
+}
+
+.admin-responsibility-icon-preview span {
+    min-width: 0;
+    font-size: 11px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   SAVE / UPDATE / CANCEL ACTIONS
+   ========================================= */
+
+.admin-experience-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid var(--ae-border);
+}
+
+/* =========================================
+   SAVED EXPERIENCES SECTION
+   ========================================= */
+
+.admin-experience-list-section {
+    margin-top: 24px;
+}
+
+.admin-experience-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.admin-experience-list-header h2 {
+    min-width: 0;
+}
+
+.admin-experience-list-header input {
+    width: 100%;
+    max-width: 260px;
+    min-width: 0;
+    padding: 11px 13px;
+    border: 1px solid var(--ae-border-input);
+    border-radius: 8px;
+    outline: none;
+    background: var(--ae-bg-input);
+    color: var(--ae-text);
+    font-size: 12px;
+    transition: border-color 180ms ease,
+                box-shadow 180ms ease;
+}
+
+.admin-experience-list-header input::placeholder {
+    color: var(--ae-text-muted);
+}
+
+.admin-experience-list-header input:focus {
+    border-color: var(--ae-purple);
+    box-shadow: 0 0 0 3px rgb(139 92 246 / 12%);
+}
+
+.admin-experience-list-section > p {
+    margin: 0;
+    padding: 28px 16px;
+    border: 1px dashed #38364d;
+    border-radius: 9px;
+    color: var(--ae-text-secondary);
+    font-size: 12px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* List container */
+
+.admin-experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    min-width: 0;
+}
+
+/* Saved experience card */
+
+.admin-experience-list-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 20px;
+    min-width: 0;
+    padding: 19px;
+    border: 1px solid var(--ae-border);
+    border-radius: 11px;
+    background: #151621;
+    transition: border-color 180ms ease,
+                background 180ms ease;
+}
+
+.admin-experience-list-card:hover {
+    border-color: #51416f;
+    background: #171824;
+}
+
+.admin-experience-list-card > div:first-child {
+    min-width: 0;
+}
+
+.admin-experience-list-card h3 {
+    margin: 0 0 6px;
+    color: var(--ae-text);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.admin-experience-list-card > div:first-child > p {
+    margin: 0 0 8px;
+    color: var(--ae-purple-light);
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.admin-experience-list-card small {
+    display: block;
+    margin-top: 7px;
+    color: #9293a9;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* Employment type and publication status */
+
+.admin-experience-list-status {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.admin-experience-list-status > span {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border: 1px solid #3a3055;
+    border-radius: 6px;
+    background: #27203a;
+    color: var(--ae-purple-light);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.admin-experience-list-status > span.published {
+    border-color: #285941;
+    background: #14271f;
+    color: #8ee0b9;
+}
+
+.admin-experience-list-status > span.draft {
+    border-color: #494154;
+    background: #211d2b;
+    color: #c1b5d9;
+}
+
+/* Saved responsibility icon previews */
+
+.admin-responsibility-saved-preview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding-top: 13px;
+    border-top: 1px solid var(--ae-border);
+}
+
+.admin-responsibility-saved-preview > strong {
+    width: 100%;
+    margin-bottom: 2px;
+    color: #d7d7e4;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.admin-responsibility-saved-preview > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    max-width: 100%;
+    padding: 6px 9px;
+    border: 1px solid var(--ae-border-input);
+    border-radius: 6px;
+    background: #1a1b29;
+    color: #bfc0d1;
+    font-size: 10px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.admin-responsibility-saved-preview > span svg {
+    flex-shrink: 0;
+    color: var(--ae-purple-light);
+    font-size: 12px;
+}
+
+/* Edit, publish, unpublish and delete */
+
+.admin-experience-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.admin-experience-card-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 33px;
+    padding: 8px 10px;
+    border: 1px solid var(--ae-border-input);
+    border-radius: 7px;
+    background: #191a27;
+    color: #bfc0d1;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 180ms ease;
+}
+
+.admin-experience-card-actions button svg {
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+.admin-experience-card-actions button:hover {
+    border-color: #65508f;
+    background: #28213f;
+    color: var(--ae-purple-light);
+}
+
+.admin-experience-card-actions button.delete {
+    border-color: #49303a;
+    background: #211921;
+    color: var(--ae-danger);
+}
+
+.admin-experience-card-actions button.delete:hover {
+    border-color: #b94b64;
+    background: #3b202d;
+    color: #ffb4c0;
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+.admin-experience button:focus-visible {
+    outline: 2px solid var(--ae-purple-light);
+    outline-offset: 3px;
+}
+
+.admin-experience input:focus-visible,
+.admin-experience select:focus-visible,
+.admin-experience textarea:focus-visible {
+    outline: none;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+    .admin-experience-form-section,
+    .admin-experience-list-section {
+        padding: 20px;
+    }
+
+    .admin-experience-list-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .admin-experience-card-actions {
+        justify-content: flex-start;
+        padding-top: 13px;
+        border-top: 1px solid var(--ae-border);
+    }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+    .admin-experience-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .admin-experience-header h1 {
+        font-size: 22px;
+    }
+
+    .admin-experience-form-section,
+    .admin-experience-list-section {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .admin-experience-form-section > h2,
+    .admin-experience-list-header h2 {
+        font-size: 16px;
+    }
+
+    .admin-experience-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .admin-responsibilities {
+        padding: 13px;
+    }
+
+    .admin-responsibilities-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .admin-responsibilities-header > button {
+        width: 100%;
+    }
+
+    .admin-responsibility-item {
+        padding: 13px;
+    }
+
+    .admin-responsibility-icon-field {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .admin-responsibility-icon-preview {
+        min-height: 40px;
+    }
+
+    .admin-experience-form-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-experience-form-actions .admin-experience-button {
+        width: 100%;
+    }
+
+    .admin-experience-list-header {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .admin-experience-list-header input {
+        max-width: none;
+    }
+
+    .admin-experience-list-card {
+        padding: 14px;
+    }
+
+    .admin-experience-card-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-experience-card-actions button {
+        width: 100%;
+        white-space: normal;
+    }
+
+    .admin-experience-card-actions button.delete {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Small phones */
+
+@media (max-width: 380px) {
+    .admin-experience-form-section,
+    .admin-experience-list-section {
+        padding: 12px;
+    }
+
+    .admin-responsibilities {
+        padding: 10px;
+    }
+
+    .admin-responsibility-item {
+        padding: 10px;
+    }
+
+    .admin-responsibility-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-responsibility-actions {
+        align-self: flex-end;
+    }
+
+    .admin-experience-button {
+        padding: 10px 11px;
+        font-size: 11px;
+    }
+
+    .admin-experience-card-actions {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin-experience-card-actions button.delete {
+        grid-column: auto;
+    }
+}
+
+/* Respect reduced motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-experience *,
+    .admin-experience *::before,
+    .admin-experience *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

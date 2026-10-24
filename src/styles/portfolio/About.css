@@ -1,0 +1,498 @@
+
+/* =========================================
+   ABOUT PAGE — DARK & LIGHT THEME
+========================================= */
+
+.about-page {
+    --about-bg: var(--site-bg);
+    --about-surface: var(--site-surface);
+    --about-surface-hover: var(--site-card);
+    --about-text: var(--site-text);
+    --about-muted: var(--site-muted);
+    --about-purple: var(--site-accent);
+    --about-blue: var(--site-blue);
+
+    --about-border: var(--site-border);
+    --about-card-text: var(--site-text);
+    --about-quote-bg: rgba(139, 92, 246, 0.07);
+    --about-tag-bg: var(--site-card);
+    --about-image-caption: rgba(5, 8, 20, 0.96);
+
+    min-height: 100vh;
+    overflow: hidden;
+    background: var(--about-bg);
+    color: var(--about-text);
+    font-family: "Poppins", sans-serif;
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Light theme overrides */
+.public-portfolio[data-theme="light"] .about-page {
+    --about-border: rgba(15, 23, 42, 0.14);
+    --about-card-text: #111827;
+    --about-quote-bg: #f3efff;
+    --about-tag-bg: #f1f5f9;
+    --about-image-caption: rgba(5, 8, 20, 0.88);
+}
+
+/* Box sizing */
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+    box-sizing: border-box;
+}
+
+.about-page a {
+    text-decoration: none;
+}
+
+/* Container */
+.about-container {
+    width: min(1160px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+/* Hero */
+.about-hero {
+    position: relative;
+    padding: 76px 0 100px;
+    background:
+        radial-gradient(
+            ellipse at 12% 8%,
+            rgba(124, 58, 237, 0.12),
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 92% 55%,
+            rgba(37, 99, 235, 0.09),
+            transparent 36%
+        ),
+        var(--about-bg);
+}
+
+.about-heading {
+    max-width: 690px;
+    margin: 0 auto 76px;
+    text-align: center;
+}
+
+.about-eyebrow,
+.about-section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--about-purple);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.about-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--about-blue);
+    box-shadow: 0 0 14px rgba(96, 165, 250, 0.55);
+}
+
+.about-heading h1 {
+    margin: 20px 0 16px;
+    color: var(--about-text);
+    font-size: clamp(2.7rem, 6vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1.12;
+}
+
+.about-heading h1 span,
+.about-content h2 span,
+.about-section-heading h2 span {
+    color: var(--about-purple);
+    background: linear-gradient(
+        110deg,
+        #a78bfa,
+        #818cf8 55%,
+        #60a5fa
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-heading > p {
+    max-width: 590px;
+    margin: 0 auto;
+    color: var(--about-muted);
+    font-size: 1.02rem;
+    line-height: 1.9;
+}
+
+/* Intro layout */
+.about-intro {
+    display: grid;
+    grid-template-columns: 0.88fr 1.12fr;
+    align-items: center;
+    gap: clamp(48px, 7vw, 96px);
+}
+
+/* Profile image */
+.about-visual {
+    position: relative;
+    width: 100%;
+    max-width: 410px;
+    margin: 0 auto;
+    padding: 0 20px 24px 0;
+}
+
+.about-image-glow {
+    position: absolute;
+    inset: 12% -8% 0 8%;
+    border-radius: 40px;
+    background: linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.22),
+        rgba(59, 130, 246, 0.15)
+    );
+    filter: blur(38px);
+    pointer-events: none;
+}
+
+.about-image-frame {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--about-border);
+    border-radius: 26px;
+    background: var(--about-surface);
+    box-shadow: 0 20px 55px rgba(15, 23, 42, 0.15);
+}
+
+.about-profile-image {
+    display: block;
+    width: 100%;
+    height: 465px;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.6s ease;
+}
+
+.about-image-frame:hover .about-profile-image {
+    transform: scale(1.035);
+}
+
+/* Image caption */
+.about-image-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 20px 20px;
+    background: linear-gradient(
+        transparent,
+        var(--about-image-caption)
+    );
+    color: #fff;
+}
+
+.about-caption-icon,
+.about-journey-icon {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(167, 139, 250, 0.32);
+    border-radius: 14px;
+    background: rgba(139, 92, 246, 0.18);
+    color: #c4b5fd;
+}
+
+.about-image-caption strong,
+.about-image-caption span {
+    display: block;
+}
+
+.about-image-caption strong {
+    margin-bottom: 4px;
+    color: #fff;
+    font-size: 0.98rem;
+}
+
+.about-image-caption div > span {
+    color: #e2e8f0;
+    font-size: 0.79rem;
+}
+
+/* About content */
+.about-content h2 {
+    margin: 18px 0 22px;
+    color: var(--about-text);
+    font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.3;
+}
+
+.about-description {
+    margin-bottom: 17px;
+    color: var(--about-muted);
+    font-size: 0.94rem;
+    line-height: 1.95;
+}
+
+/* Quote */
+.about-quote {
+    display: flex;
+    gap: 14px;
+    margin: 28px 0;
+    padding: 20px 22px;
+    border: 1px solid var(--about-border);
+    border-left: 3px solid var(--about-purple);
+    border-radius: 4px 16px 16px 4px;
+    background: var(--about-quote-bg);
+    transition: background 0.25s ease;
+}
+
+.about-quote:hover {
+    background: var(--about-tag-bg);
+}
+
+.about-quote-mark {
+    flex-shrink: 0;
+    color: var(--about-purple);
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.about-quote p {
+    align-self: center;
+    margin: 0;
+    color: var(--about-card-text);
+    font-size: 0.89rem;
+    font-style: italic;
+    line-height: 1.85;
+}
+
+/* Tags */
+.about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 30px;
+}
+
+.about-tags span {
+    padding: 8px 12px;
+    border: 1px solid var(--about-border);
+    border-radius: 8px;
+    background: var(--about-tag-bg);
+    color: var(--about-card-text);
+    font-size: 0.76rem;
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.about-tags span:hover {
+    border-color: var(--about-purple);
+    color: var(--about-purple);
+}
+
+/* Buttons */
+.about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.about-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    min-height: 49px;
+    padding: 0 21px;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.about-btn:hover {
+    transform: translateY(-3px);
+}
+
+.about-btn-primary {
+    background: linear-gradient(110deg, #7c3aed, #4f46e5);
+    box-shadow: 0 9px 24px rgba(99, 60, 210, 0.22);
+    color: #fff;
+}
+
+.about-btn-primary:hover {
+    box-shadow: 0 13px 30px rgba(99, 60, 210, 0.36);
+    color: #fff;
+}
+
+.about-btn-secondary {
+    border-color: var(--about-border);
+    background: var(--about-tag-bg);
+    color: var(--about-text);
+}
+
+.about-btn-secondary:hover {
+    border-color: var(--about-purple);
+    color: var(--about-purple);
+}
+
+/* Highlights sections: preserve layout and make text theme-aware */
+.about-highlights-section {
+    background: var(--about-bg);
+    color: var(--about-text);
+}
+
+.about-section-heading h2 {
+    color: var(--about-text);
+}
+
+.about-highlights-grid {
+    color: var(--about-text);
+}
+
+/* Responsive: tablet */
+@media (max-width: 1050px) {
+    .about-intro {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 42px;
+    }
+
+    .about-profile-image {
+        height: 410px;
+    }
+}
+
+/* Responsive: mobile */
+@media (max-width: 768px) {
+    .about-container {
+        width: min(100% - 36px, 560px);
+    }
+
+    .about-hero {
+        padding: 55px 0 75px;
+    }
+
+    .about-heading {
+        margin-bottom: 50px;
+    }
+
+    .about-heading h1 {
+        letter-spacing: -1.4px;
+    }
+
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .about-visual {
+        max-width: 390px;
+        padding-right: 12px;
+    }
+
+    .about-profile-image {
+        height: min(112vw, 440px);
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-highlights-section {
+        padding: 72px 0;
+    }
+
+    .about-section-heading {
+        margin-bottom: 35px;
+    }
+}
+
+/* Responsive: small mobile */
+@media (max-width: 480px) {
+    .about-container {
+        width: calc(100% - 30px);
+    }
+
+    .about-heading h1 {
+        font-size: 2.65rem;
+    }
+
+    .about-heading > p {
+        font-size: 0.91rem;
+    }
+
+    .about-visual {
+        padding-right: 5px;
+    }
+
+    .about-profile-image {
+        height: 380px;
+    }
+
+    .about-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .about-description {
+        font-size: 0.88rem;
+    }
+
+    .about-quote {
+        padding: 16px;
+    }
+
+    .about-tags {
+        gap: 7px;
+    }
+
+    .about-tags span {
+        padding: 7px 9px;
+        font-size: 0.71rem;
+    }
+
+    .about-actions {
+        flex-direction: column;
+    }
+
+    .about-btn {
+        width: 100%;
+    }
+
+    .about-highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section-heading h2 {
+        font-size: 1.9rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .about-page *,
+    .about-page *::before,
+    .about-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

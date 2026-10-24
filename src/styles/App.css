@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+
+
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  padding: 10px 20px;
+  background-color: #5f1818;
+  margin-bottom: 20px;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-link {
+  color: #ffff;
+}
+
+.nav-link:hover {
+  border-bottom: 1px solid #ffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.avatar {
+  border-radius: 50%;
+  max-width: 200%;
+  height: 100px;
+
+}
+
+
+
+/* ===== Public Portfolio Theme Variables ===== */
+.public-portfolio {
+  --site-bg: #080b18;
+  --site-surface: #0c1124;
+  --site-card: #11182c;
+  --site-text: #f1f5ff;
+  --site-muted: #a2aec6;
+  --site-border: rgba(173, 190, 255, 0.17);
+  --site-accent: #a78bfa;
+  --site-blue: #60a5fa;
+
+  background-color: var(--site-bg);
+  color: var(--site-text);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.public-portfolio[data-theme="light"] {
+  --site-bg: #f8fafc;
+  --site-surface: #ffffff;
+  --site-card: #f1f5f9;
+  --site-text: #111827;
+  --site-muted: #64748b;
+  --site-border: rgba(15, 23, 42, 0.12);
+  --site-accent: #7c3aed;
+  --site-blue: #2563eb;
+}
+
